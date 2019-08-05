@@ -5,10 +5,10 @@ function dataHandling(input) {
 
 var kalimat = '';
     for (i=0; i < input.length; i++) {
-        console.log('Nomor ID '+ input[i][0]);
-        console.log(' Nama Lengkap '  + input[i][1]);
+        console.log('Nomor ID: '+ input[i][0]);
+        console.log(' Nama Lengkap: '  + input[i][1]);
         console.log(' TTL: ' + input[i][2] + ' ' + input[i][3]);
-        console.log(' Hobby: '  + input[i][4]);
+        console.log(' Hobby: '  + input[i][4] + '\n' );
         
     }
     return kalimat
