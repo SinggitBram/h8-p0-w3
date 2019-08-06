@@ -6,13 +6,27 @@ var numSplit = numString.split('')
 
 var numSort = numSplit.sort(function(value1, value2) { return Number(value1) < Number(value2) })
 
-var numBesar = numSort[0]
+var numLama = 0
 
-var numDua = numSplit[numBesar]
-return numDua
+var numBaru = 0
 
+for (i=0 ; i<=numSplit.length-1 ; i++) {
 
+    var numSplit = numString.split('')
+
+    if(numSplit[i] == numSort[0]) {
+        numLama = numSplit[i] + numSplit[i+1]
+        
+        if(numBaru < numLama) {
+            numBaru = numLama
+        }
+    }
 }
+
+return numBaru
+}
+
+
 
 console.log(pasanganTerbesar(641573)); // 73
 console.log(pasanganTerbesar(12783456)); // 83
