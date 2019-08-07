@@ -6,14 +6,12 @@ function tentukanDeretAritmatika(arr) {
 for (i= 0 ; i< arr.length-1 ; i++) {
 hasil = arr[i+1] - arr[i]
 }
-
 if(hasil === selisih) {
     return true
 }
 else {
     return false
 }
-
 }
 
 
