@@ -1,20 +1,29 @@
 function angkaPalindrome(num) {
-   
-   while (true) {
- 
-    var angkaBalik = '';
-    var num = num + 1;
-
-    var angka = String(num)
-    for (var i = angka.length-1; i >= 0; i--) 
-    {
-    angkaBalik = angkaBalik + angka[i]
-    }     
-    if (angkaBalik === angka) {
-        return num
+    var palindromeFound = false
+    
+    num++
+    
+    while(palindromeFound === false) {
+        var angkaBalik = ''
+        var jadiString = String(num)
+        for(var i=jadiString.length-1; i>=0; i--) {
+            angkaBalik = angkaBalik + jadiString[i]
+        }
+        if(angkaBalik === jadiString) {
+            return Number(angkaBalik)
+        }
+        else {
+            num++
+        }
+                   
     }
 }
-}
+
+
+
+
+
+
 console.log(angkaPalindrome(8)); // 9
 console.log(angkaPalindrome(10)); // 11
 console.log(angkaPalindrome(117)); // 121

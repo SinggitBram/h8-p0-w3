@@ -1,32 +1,15 @@
 function pasanganTerbesar(num) {
 
-var numString = String(num)
-
-var numSplit = numString.split('')
-
-var numSort = numSplit.sort(function(value1, value2) { return Number(value1) < Number(value2) })
-
-var numLama = 0
-
-var numBaru = 0
-
-for (i=0 ; i<=numSplit.length-1 ; i++) {
-
-    var numSplit = numString.split('')
-
-    if(numSplit[i] == numSort[0]) {
-        numLama = numSplit[i] + numSplit[i+1]
-        
-        if(numBaru < numLama) {
-            numBaru = numLama
-        }
+    var ubahJadiString = String(num)
+    var akhir = Number(ubahJadiString[0])
+    for (var i=0; i<ubahJadiString.length -1; i++){
+            duaAngka = ubahJadiString[i] + ubahJadiString[i+1] 
+            if (Number(duaAngka) > Number(akhir)){
+                akhir = duaAngka
+        } 
     }
+    return akhir
 }
-
-return numBaru
-}
-
-
 
 console.log(pasanganTerbesar(641573)); // 73
 console.log(pasanganTerbesar(12783456)); // 83
