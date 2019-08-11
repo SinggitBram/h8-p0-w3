@@ -1,16 +1,11 @@
 function tentukanDeretGeometri(arr) {
     var selisih = arr[1] / arr[0]
-    var hasil = 0
- for (i= 0 ; i< arr.length-1 ; i++) {
- hasil = arr[i+1] / arr[i]
- }
- if(hasil === selisih) {
-     return true
- }
- else {
-     return false
- }
- }
+    for (var i= arr.length-1 ; i>0 ; i--) {
+        if ((arr[i] / arr[i-1]) !== selisih)
+        return false    
+    }
+    return true
+}
  
   // TEST CASES
   console.log(tentukanDeretGeometri([1, 3, 9, 27, 81])); // true
