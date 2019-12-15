@@ -4,12 +4,11 @@ function dataHandling2(input) {
    input.splice(1,2, 'Roman Alamsyah Elsharawy' , 'Provinsi Bandar Lampung');
    input.splice(4,1, 'Pria', 'SMA Internasional Metro');
    
-   
    console.log(input)
-   
+
+// -------------------------------------------------------------------------------------------------------------------------------
+
    tanggalSplit = input[3].split('/');
-   
-   console.log(tanggalSplit)
    
    switch (tanggalSplit[1]) {
       case '01' : 
@@ -49,22 +48,35 @@ function dataHandling2(input) {
       console.log('Desember');
       break;
    } 
-   
-   tanggalSort = tanggalSplit.sort(function(value1, value2) { return Number(value1) < Number(value2) });
+
+   // -------------------------------------------------------------------------------------------------------------------------------
+
+   tanggalSort = tanggalSplit.sort(function(a, b) { return b - a });
    
    console.log(tanggalSort)
+
+   // -------------------------------------------------------------------------------------------------------------------------------
    
-   tanggalSplit = input[3].split('/');
+
+   console.log(input[3].split('/').join('-'))
    
-   console.log(tanggalSplit.join('-'))
-   
-   console.log(input[1].slice(0, 15))
+   console.log(input[1].slice(0, 14))
 }
 
 var input = ["0001", "Roman Alamsyah", "Bandar Lampung", "21/05/1989", "Membaca"]
 dataHandling2(input)   
 
 //["0001", "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro"] 
+
+/**
+ * keluaran yang diharapkan (pada console)
+ *
+ * ["0001", "Roman Alamsyah Elsharawy", "Provinsi Bandar Lampung", "21/05/1989", "Pria", "SMA Internasional Metro"]
+ * Mei
+ * ["1989", "21", "05"]
+ * 21-05-1989
+ * Roman Alamsyah
+ */
 
 
 

@@ -1,28 +1,25 @@
 function angkaPalindrome(num) {
-    var palindromeFound = false
-    
-    num++
-    
-    while(palindromeFound === false) {
-        var angkaBalik = ''
-        var jadiString = String(num)
-        for(var i=jadiString.length-1; i>=0; i--) {
-            angkaBalik = angkaBalik + jadiString[i]
+    let start = num + 1
+    let val = false
+    while (val === false) {
+        if (palindrome(start.toString()) === true) {
+            return start
+        } else {
+            start++
         }
-        if(angkaBalik === jadiString) {
-            return Number(angkaBalik)
-        }
-        else {
-            num++
-        }
-                   
     }
 }
 
-
-
-
-
+function palindrome(kata) {
+    let baru = ''
+    for (let i = kata.length - 1; i >= 0; i--) {
+        baru = baru + kata[i]
+    }
+    if (baru === kata) {
+        return true
+    }
+    return false
+}
 
 console.log(angkaPalindrome(8)); // 9
 console.log(angkaPalindrome(10)); // 11

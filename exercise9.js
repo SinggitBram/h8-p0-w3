@@ -1,21 +1,10 @@
 function cariMean(arr) {
-
-var jumlah = 0
-
-var hasilBagi = 0
-
-var hasilPembulatan = 0
-
-for(var i=0; i<arr.length; i++) {
-    jumlah += arr[i]
+    let jumlah = 0
+    for (let i = 0; i < arr.length; i++) {
+        jumlah = jumlah + arr[i]
+    }
+    return Math.ceil(jumlah / arr.length)
 }
-hasilBagi = jumlah / arr.length
-
-hasilPembulatan = Math.round(hasilBagi)
-
-return hasilPembulatan
-}
-
 
 console.log(cariMean([1, 2, 3, 4, 5])); // 3
 console.log(cariMean([3, 5, 7, 5, 3])); // 5

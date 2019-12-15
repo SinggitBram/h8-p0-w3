@@ -1,18 +1,15 @@
 function mengelompokkanAngka(arr) {
-var pengelompokan = [[],[],[]]
-
-for (i=0; i<=arr.length-1; i++) {
-    if(arr[i] % 3 === 0) {
-        pengelompokan[2].push(arr[i])
+    let hasil = [[], [], []]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 3 === 0) {
+            hasil[2].push(arr[i])
+        } else if (arr[i] % 2 === 0) {
+            hasil[0].push(arr[i])
+        } else {
+            hasil[1].push(arr[i])
         }
-        else if (arr[i] % 2 === 0) {
-            pengelompokan[0].push(arr[i])
-        }
-        else {
-            pengelompokan[1].push(arr[i])
-        }
-    }   
-    return pengelompokan
+    }
+    return hasil
 }
   
   // TEST CASES

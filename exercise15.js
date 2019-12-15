@@ -1,27 +1,27 @@
 function groupAnimals(animals) {
     animals.sort()
-    var urutanHewan = []
-    for (var i=0 ; i<animals.length; i ++){
-        if(urutanHewan.length === 0) {
-            urutanHewan.push([]);
-            urutanHewan[0].push(animals[0])
+    let hasil = [[animals[0]]]
+
+    for (let i = 1; i < animals.length; i++) {
+        let val = false
+        for (let j = 0; j < hasil.length; j++) {
+            if (animals[i][0] === hasil[j][0][0]) {
+                hasil[j].push(animals[i])
+                val = true
+            }
         }
-        else if(urutanHewan[urutanHewan.length-1][0][0] !== animals[i][0]){
-            urutanHewan.push([]);
-            urutanHewan[urutanHewan.length-1].push(animals[i])
+        if (val === false) {
+            hasil.push([animals[i]])
         }
-        else if (urutanHewan[urutanHewan.length-1][0][0] === animals[i][0]){
-            urutanHewan[urutanHewan.length-1].push(animals[i])
-        }    
-        
     }
-    return urutanHewan
+    return hasil
 }
+
   // TEST CASES
   console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
-  [ ['ayam', 'anoa'], ['cacing'], ['kuda', 'kancil'] ]
+//   [ ['ayam', 'anoa'], ['cacing'], ['kuda', 'kancil'] ]
   console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]));
-  [ ['ayam', 'anoa'], ['cacing', 'cicak'], ['kuda', 'kancil'], ['unta'] ]
+//   [ ['ayam', 'anoa'], ['cacing', 'cicak'], ['kuda', 'kancil'], ['unta'] ]
 
 
 

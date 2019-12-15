@@ -1,29 +1,20 @@
 function targetTerdekat(arr) {
     // you can only write your code here!
-    
-    var posisiO = arr.indexOf('o')
-    var hasil = arr.length
-    
-    if (arr.indexOf('x') === -1) {
-        return 0;
-    }
-    else {
-        for (var i = 0; i < arr.length ; i++) {
-            if (arr[i] === 'x') {
-                var selisihOX = Math.abs(i - posisiO)
-                if (selisihOX < hasil) {
-                    hasil = selisihOX
-                }
-            }
+    let posisio = arr.indexOf('o')
+    let hasil = []
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 'x') {
+            hasil.push(Math.abs(i - posisio))
         }
-            
-    }  
-    return hasil
+    }
+    if (hasil.length === 0) {
+        return 0
+    }
+    return hasil.sort(function (a, b) {
+        return a - b
+    })[0]
 }
-
-
-
-
 
   // TEST CASES
   console.log(targetTerdekat([' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'])); // 3

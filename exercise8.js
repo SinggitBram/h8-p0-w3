@@ -1,14 +1,13 @@
 function pasanganTerbesar(num) {
-
-    var ubahJadiString = String(num)
-    var akhir = Number(ubahJadiString[0])
-    for (var i=0; i<ubahJadiString.length -1; i++){
-            duaAngka = ubahJadiString[i] + ubahJadiString[i+1] 
-            if (Number(duaAngka) > Number(akhir)){
-                akhir = duaAngka
-        } 
+    let pasangan = []
+    let ubah = num.toString()
+    for (let i = 0; i < ubah.length - 1; i++) {
+        pasangan.push(ubah[i] + ubah[i + 1])
     }
-    return akhir
+    urut = pasangan.sort(function (a, b) {
+        return b - a
+    })
+    return urut[0]
 }
 
 console.log(pasanganTerbesar(641573)); // 73

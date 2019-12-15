@@ -1,19 +1,14 @@
 function perkalianUnik(arr) {
-
-var angkaBaru = []
-var hasilKali = 1
-var hasilBagi = 0
-
-for (i=0 ; i<arr.length; i++) {
-   hasilKali *= arr[i]
+    let totalkali = 1
+    let hasil = []
+    for (let i = 0; i < arr.length; i++) {
+        totalkali = totalkali * arr[i]
+    }
+    for (let j = 0; j < arr.length; j++) {
+        hasil.push(totalkali / arr[j])
+    }
+    return hasil
 }
-for (j=0; j<arr.length; j++) {
-   hasilBagi = hasilKali / arr[j];
-   angkaBaru[j] = hasilBagi
-}
-return angkaBaru
-}
-
 
 console.log(perkalianUnik([2, 4, 6])); // [24, 12, 8]
 console.log(perkalianUnik([1, 2, 3, 4, 5])); // [120, 60, 40, 30, 24]

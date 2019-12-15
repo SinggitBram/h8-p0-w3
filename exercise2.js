@@ -1,14 +1,10 @@
-
-
-
 function balikString(kata) {
-    var pengulangan = ''
-    for (i = kata.length-1; i >= 0; i--) 
-    {
-
-    pengulangan = pengulangan + kata[i]
-    }  
-    
-    return pengulangan  
+    let hasil = ''
+    for (let i = kata.length - 1; i >= 0; i--) {
+        hasil = hasil + kata[i]
+    }
+    return hasil
 }
-    console.log(balikString('helloooo world!'))
+    console.log(balikString('hello world!'))
+    
+//"!dlrow olleh"
